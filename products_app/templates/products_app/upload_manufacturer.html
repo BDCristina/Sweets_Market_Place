@@ -1,0 +1,15 @@
+<!-- products_app/templates/products_app/upload_category.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Încarcă un Producator</title>
+</head>
+<body>
+    <h1>Încarcă un Producator</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Încarcă Categorie">
+    </form>
+</body>
+</html>

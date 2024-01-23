@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Încărcați un produs</title>
+
+</head>
+<body>
+<!--    <h1>Încărcați un produs</h1>-->
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <input type="submit" value="Încărcați produsul">-->
+<!--    </form>-->
+    <h1>Încarcă un produs</h1>
+    <form method="post" enctype="multipart/form-data" id="product-upload-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <script>
+            var categoryDropdown = document.getElementById('id_category');
+            var newCategoryInput = document.getElementById('id_new_category_name');
+            var newCategoryTextInput = document.getElementById('id_new_category_name_text');
+
+            var manufacturerDropdown = document.getElementById('id_manufacturer');
+            var newManufacturerInput = document.getElementById('id_new_manufacturer_name');
+            var newManufacturerTextInput = document.getElementById('id_new_manufacturer_name_text');
+
+            categoryDropdown.addEventListener('change', function() {
+                if (this.value === '') {
+                    newCategoryInput.style.display = 'block';
+                    newCategoryTextInput.style.display = 'block';
+                } else {
+                    newCategoryInput.style.display = 'none';
+                    newCategoryTextInput.style.display = 'none';
+                }
+            });
+
+            manufacturerDropdown.addEventListener('change', function() {
+                if (this.value === '') {
+                    newManufacturerInput.style.display = 'block';
+                    newManufacturerTextInput.style.display = 'block';
+                } else {
+                    newManufacturerInput.style.display = 'none';
+                    newManufacturerTextInput.style.display = 'none';
+                }
+            });
+        </script>
+        <input type="submit" value="Încarcă produsul">
+    </form>
+</body>
+</html>
