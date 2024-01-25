@@ -4,6 +4,11 @@
     background-color: #FFC300 !important;
 }
 
+.logout-button{
+    background-color: #FFC300;
+    border:#FFC300;
+}
+
 .heading-title {
     color: #000000;
     font-size: 88px;
