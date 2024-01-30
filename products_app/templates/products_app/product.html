@@ -14,7 +14,7 @@
                 <p class="card-text"><small class="text-muted">Weight: {{ product.weight_grams }} g</small></p>
             </div>
             {% if user %}
-                <a href="#">
+                <a href="{% url 'sweet_market_place_app:add_to_cart' product_id=product.id %}">
                     <button class="btn-custom-reverse spaced-top-2">Adauga in cos</button>
                 </a>
             {% endif %}

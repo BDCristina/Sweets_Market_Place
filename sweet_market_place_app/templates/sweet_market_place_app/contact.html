@@ -1,0 +1,49 @@
+{% extends "sweet_market_place_app/base.html" %}
+
+{% block content %}
+<div class="container spaced-top-5 black-bg">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Contactează-ne</h1></br>
+            <p class="text-center">Dacă aveți întrebări sau sugestii, vă rugăm să ne contactați folosind formularul de mai jos:</p></br></br></br></br>
+
+            <form method="post" action="#">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                             <label for="nume">Nume</label>
+                            <input type="text" class="form-control" id="nume" name="nume" placeholder="Nume" required>
+                        </div>
+                        <div class="col">
+                             <label for="nume">Prenume</label>
+                            <input type="text" class="form-control" id="prenume" name="prenume" placeholder="Prenume" required>
+                        </div>
+                    </div>
+                </div></br>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                             <label for="phone">Telefon:</label>
+                            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Telefon" required>
+                        </div>
+                        <div class="col">
+                             <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                </div></br>
+
+                <div class="form-group">
+                    <label for="mesaj">Mesaj:</label>
+                    <textarea class="form-control" id="mesaj" name="mesaj" placeholder="Ne poti lasa mesajul tau aici.." rows="4" required></textarea> </br>
+                </div>
+
+                <button type="submit" class="btn-custom spaced-top-2">Trimite</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

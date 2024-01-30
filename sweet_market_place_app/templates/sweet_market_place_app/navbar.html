@@ -10,7 +10,7 @@
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="/">Acasa</a>
           <a class="nav-link active" aria-current="page" href="{% url 'products_app:products' %}">Produse</a>
-          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'sweet_market_place_app:contact' %}">Contact</a>
           {% if user.is_authenticated %}
             <a class="nav-link" href="{#}" title="Deautentificare"> Hi, {{user.username}}
               <i class="fas fa-user"></i>
@@ -21,7 +21,7 @@
                 <i class="fas fa-sign-out-alt"></i>
               </button>
             </form>
-            <a class="nav-link" href="{#}" title="Coșul tău">
+            <a class="nav-link" href="{% url 'sweet_market_place_app:shopping_cart' %}" title="Coșul tău">
               <i class="fa-solid fa-shopping-cart"></i>
             </a>
           {% else %}

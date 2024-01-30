@@ -1,0 +1,59 @@
+{% extends "sweet_market_place_app/base.html" %}
+{% load static%}
+
+{% block content %}
+<div class="container spaced-top-5 black-bg">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Coșul de cumpărături</h1></br></br></br></br>
+            
+            <!-- Afiseaza produsele din coș intr-un tabel -->
+            <!-- Aici poți itera prin produsele din coș și le poți afișa într-un tabel -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produs</th>
+                            <th>Preț</th>
+                            <th>Cantitate</th>
+                            <th>Total</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order_item in order_items %}
+                            <tr>
+                                <td>{{ order_item.product.name }}</td>
+                                <td>{{ order_item.product.price }}</td>
+                                <td>{{ order_item.quantity }}</td>
+                                <td>{{ order_item.get_final_price }}</td>
+                                <td>
+                                    <button onclick="deleteProduct({{ order_item.product.id }})">Delete</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>Total:</td>
+                            <td>{{ total_cumparaturi }}</td>
+                        </tr>
+                    </tfoot>
+                </table></br>
+
+
+            <!-- Adaugă un buton pentru a continua cumpărăturile sau pentru a merge la pagina de checkout -->
+            <div class="d-flex justify-content-between">
+                <a href="{% url 'products_app:products' %}">
+                    <button class="btn-custom spaced-top-2">Continuă Cumpărăturile</button>
+                </a>
+                <form method="post" action="{% url 'sweet_market_place_app:finalizeaza_comanda' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-custom spaced-top-2">Finalizează Comanda</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -27,7 +27,7 @@
                             <button class="btn-custom spaced-top-2">See details</button>
                         </a>
                         {% if user.is_authenticated %}
-                            <a href="#">
+                            <a href="{% url 'sweet_market_place_app:add_to_cart' product_id=product.id %}">
                                 <button class="btn-custom-reverse spaced-top-2">Add to cart</button>
                             </a>
                         {% endif %}
