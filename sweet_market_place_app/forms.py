@@ -19,3 +19,4 @@ class OrderItemForm(forms.ModelForm):
         super(OrderItemForm, self).__init__(*args, **kwargs)
         self.fields['product'].widget.attrs['class'] = 'form-control'
         self.fields['quantity'].widget.attrs['class'] = 'form-control'
+

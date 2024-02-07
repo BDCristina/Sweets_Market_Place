@@ -9,6 +9,7 @@ from products_app.models.product import Product
 from django.urls import reverse
 from django.db.models import F
 
+
 # Create your views here.
 def home_view(request):
     return render(request, 'sweet_market_place_app/home.html')
