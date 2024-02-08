@@ -17,7 +17,7 @@ SweetMarketplace provides an online platform where confectionery enthusiasts can
 
 
 ## 2. Screenshots & Video Sweet MarketPlace
-![Alt Text](/Users/balanicacristina/Documents/GitHub/1.PythonProjects/sweet_market_place/photo_app/sweet_market_place.png)
+![Alt Text](photo_app/sweet_market_place.png)
 - [Watch presentation video](https://youtu.be/WiQzqCyintI)
 
 ## 3. Installation Instructions
